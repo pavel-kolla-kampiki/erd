@@ -186,7 +186,7 @@ comment = do
 ident :: Parser Text
 ident = do
   spacesNoNew
-  let p = satisfy (\c -> c == '_' || isAlphaNum c)
+  let p = satisfy (\c -> c == '_' || c == '.' || isAlphaNum c)
             <?> "letter, digit or underscore"
   n <- fmap pack (many1 p)
   spacesNoNew
